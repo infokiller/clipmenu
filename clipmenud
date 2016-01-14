@@ -7,7 +7,7 @@ declare -A last_data
 declare -A last_filename
 
 while sleep "${CLIPMENUD_SLEEP:-0.5}"; do
-    for selection in clipboard primary; do
+    for selection in clipboard; do
         if type -p xsel >/dev/null 2>&1; then
             data=$(xsel --"$selection"; printf x)
             # Take ownership of the clipboard, in case the original application
